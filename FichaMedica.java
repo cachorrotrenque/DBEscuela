@@ -4,9 +4,6 @@
  */
 package seminario;
 
-
-
-
 public class FichaMedica {
     private String historial;
     private String alergias;
