@@ -1,56 +1,74 @@
 package seminario;
 
-public class Alumno extends Persona {
-    private String aula;
-    private FichaMedica fichamedica;
+import java.time.LocalDate;
 
-    public Alumno(String aula, FichaMedica fichamedica, String nombre, String apellido, int DNI) {
-        super(nombre, apellido, DNI);
-        this.aula = aula;
-        this.fichamedica = fichamedica;
+public class Alumno {
+    private int DNI;
+    private String nombre;
+    private String apellido;
+    private LocalDate fechaNacimiento;
+    private String curso;
+    private FichaMedica fichaMedica;
+
+    // Constructor vacío
+    public Alumno() {
     }
 
-    public String getAula() {
-        return aula;
+    // Constructor con parámetros
+    public Alumno(int DNI, String nombre, String apellido, LocalDate fechaNacimiento, String curso) {
+        this.DNI = DNI;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.curso = curso;
     }
 
-    public void setAula(String aula) {
-        this.aula = aula;
+    // Getters y setters
+    public int getDNI() {
+        return DNI;
     }
 
-    public FichaMedica getFichamedica() {
-        return fichamedica;
+    public void setDNI(int DNI) {
+        this.DNI = DNI;
     }
 
-    public void setFichamedica(FichaMedica fichamedica) {
-        this.fichamedica = fichamedica;
+    public String getNombre() {
+        return nombre;
     }
 
-    // Método para modificar datos personales del alumno
-    public void modificarDatosPersonales(String nuevoNombre, String nuevoApellido, int nuevoDNI) {
-        this.setNombre(nuevoNombre);
-        this.setApellido(nuevoApellido);
-        this.setDNI(nuevoDNI);
-        System.out.println("Datos personales modificados correctamente");
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    // Método para cambiar de aula
-    public void cambiarDeAula(String nuevaAula) {
-        this.aula = nuevaAula;
-        System.out.println("El alumno ha sido cambiado al aula: " + nuevaAula);
+    public String getApellido() {
+        return apellido;
     }
 
-    // Método para consultar datos del alumno
-    public void consultarDatosDelAlumno() {
-        System.out.println("Nombre: " + this.getNombre());
-        System.out.println("Apellido: " + this.getApellido());
-        System.out.println("DNI: " + this.getDNI());
-        System.out.println("Aula: " + this.getAula());
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    // Método para eliminar alumno
-    public void eliminarAlumno() {
-        // Implementa la lógica para eliminar al alumno (por ejemplo, establecer atributos a null)
-        System.out.println("Alumno eliminado correctamente");
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
+
+    public FichaMedica getFichaMedica() {
+        return fichaMedica;
+    }
+
+    public void setFichaMedica(FichaMedica fichaMedica) {
+        this.fichaMedica = fichaMedica;
     }
 }
